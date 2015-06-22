@@ -1,0 +1,16 @@
+C:\Users\simon\Google Drive\water\Water\Water\bin\Debug\Water.exe.config
+C:\Users\simon\Google Drive\water\Water\Water\bin\Debug\Water.exe
+C:\Users\simon\Google Drive\water\Water\Water\bin\Debug\Water.pdb
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.csprojResolveAssemblyReference.cache
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.Dashboard.dashboard.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.Properties.Resources.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.csproj.GenerateResource.Cache
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.exe
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.pdb
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.pos.sale.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.bill.billcreate.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.applications.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.appcreate.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.bill.billdetails.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.custdetails.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.customercreate.resources

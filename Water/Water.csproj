@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED826B47-78CE-42A0-AAC3-B2D6CFD2DDF1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Water</RootNamespace>
+    <AssemblyName>Water</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\connector.cs" />
+    <Compile Include="Base\inputvalidator.cs" />
+    <Compile Include="bill\billcreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bill\billcreate.Designer.cs">
+      <DependentUpon>billcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bill\billdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bill\billdetails.Designer.cs">
+      <DependentUpon>billdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\appcreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\appcreate.Designer.cs">
+      <DependentUpon>appcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\applications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\applications.Designer.cs">
+      <DependentUpon>applications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\custdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\custdetails.Designer.cs">
+      <DependentUpon>custdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\customercreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\customercreate.Designer.cs">
+      <DependentUpon>customercreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pos\sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pos\sale.Designer.cs">
+      <DependentUpon>sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="waterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>waterDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bill\billcreate.resx">
+      <DependentUpon>billcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bill\billdetails.resx">
+      <DependentUpon>billdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\appcreate.resx">
+      <DependentUpon>appcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\applications.resx">
+      <DependentUpon>applications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\custdetails.resx">
+      <DependentUpon>custdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\customercreate.resx">
+      <DependentUpon>customercreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pos\sale.resx">
+      <DependentUpon>sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="waterDataSet.xsc">
+      <DependentUpon>waterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="waterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>waterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="waterDataSet.xss">
+      <DependentUpon>waterDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
