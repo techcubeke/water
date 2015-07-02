@@ -45,21 +45,21 @@
             this.prod = new System.Windows.Forms.ComboBox();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waterDataSet = new Water.waterDataSet();
-            this.productsTableAdapter = new Water.waterDataSetTableAdapters.productsTableAdapter();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.appdate = new System.Windows.Forms.DateTimePicker();
+            this.rec = new System.Windows.Forms.ComboBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTableAdapter = new Water.waterDataSetTableAdapters.userTableAdapter();
             this.label9 = new System.Windows.Forms.Label();
             this.actions = new System.Windows.Forms.GroupBox();
             this.savebtn1 = new System.Windows.Forms.Button();
             this.savebtn2 = new System.Windows.Forms.Button();
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new Water.waterDataSetTableAdapters.productsTableAdapter();
+            this.userTableAdapter = new Water.waterDataSetTableAdapters.userTableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.actions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(454, 203);
+            this.label2.Location = new System.Drawing.Point(454, 276);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
@@ -191,10 +191,10 @@
             // 
             // prod
             // 
-            this.prod.DataSource = this.productsBindingSource1;
+            this.prod.DataSource = this.productsBindingSource;
             this.prod.DisplayMember = "product";
             this.prod.FormattingEnabled = true;
-            this.prod.Location = new System.Drawing.Point(169, 271);
+            this.prod.Location = new System.Drawing.Point(169, 268);
             this.prod.Margin = new System.Windows.Forms.Padding(4);
             this.prod.Name = "prod";
             this.prod.Size = new System.Drawing.Size(242, 28);
@@ -212,40 +212,32 @@
             this.waterDataSet.DataSetName = "waterDataSet";
             this.waterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // productsTableAdapter
+            // appdate
             // 
-            this.productsTableAdapter.ClearBeforeFill = true;
+            this.appdate.CustomFormat = "dd/mm/yyyy";
+            this.appdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.appdate.Location = new System.Drawing.Point(169, 351);
+            this.appdate.Margin = new System.Windows.Forms.Padding(4);
+            this.appdate.Name = "appdate";
+            this.appdate.Size = new System.Drawing.Size(159, 25);
+            this.appdate.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // rec
             // 
-            this.dateTimePicker1.CustomFormat = "dd/mm/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(169, 351);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 25);
-            this.dateTimePicker1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.userBindingSource;
-            this.comboBox2.DisplayMember = "fullname";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(578, 203);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(250, 28);
-            this.comboBox2.TabIndex = 16;
-            this.comboBox2.ValueMember = "fullname";
+            this.rec.DataSource = this.userBindingSource;
+            this.rec.DisplayMember = "fullname";
+            this.rec.FormattingEnabled = true;
+            this.rec.Location = new System.Drawing.Point(578, 276);
+            this.rec.Margin = new System.Windows.Forms.Padding(4);
+            this.rec.Name = "rec";
+            this.rec.Size = new System.Drawing.Size(250, 28);
+            this.rec.TabIndex = 16;
+            this.rec.ValueMember = "fullname";
             // 
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "user";
             this.userBindingSource.DataSource = this.waterDataSet;
-            // 
-            // userTableAdapter
-            // 
-            this.userTableAdapter.ClearBeforeFill = true;
             // 
             // label9
             // 
@@ -276,6 +268,7 @@
             this.savebtn1.TabIndex = 1;
             this.savebtn1.Text = "save and new";
             this.savebtn1.UseVisualStyleBackColor = true;
+            this.savebtn1.Click += new System.EventHandler(this.savebtn1_Click);
             // 
             // savebtn2
             // 
@@ -285,11 +278,33 @@
             this.savebtn2.TabIndex = 0;
             this.savebtn2.Text = "save and view";
             this.savebtn2.UseVisualStyleBackColor = true;
+            this.savebtn2.Click += new System.EventHandler(this.savebtn2_Click);
             // 
-            // productsBindingSource1
+            // productsTableAdapter
             // 
-            this.productsBindingSource1.DataMember = "products";
-            this.productsBindingSource1.DataSource = this.waterDataSet;
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(454, 201);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 20);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "National ID";
+            // 
+            // nat
+            // 
+            this.nat.Location = new System.Drawing.Point(578, 201);
+            this.nat.Margin = new System.Windows.Forms.Padding(4);
+            this.nat.Name = "nat";
+            this.nat.Size = new System.Drawing.Size(242, 25);
+            this.nat.TabIndex = 20;
             // 
             // appcreate
             // 
@@ -297,10 +312,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(836, 588);
+            this.Controls.Add(this.nat);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.actions);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.rec);
+            this.Controls.Add(this.appdate);
             this.Controls.Add(this.prod);
             this.Controls.Add(this.area);
             this.Controls.Add(this.apppin);
@@ -325,7 +342,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.waterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.actions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,17 +363,18 @@
         private System.Windows.Forms.TextBox apppin;
         private System.Windows.Forms.RichTextBox area;
         private System.Windows.Forms.ComboBox prod;
-        private waterDataSet waterDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private waterDataSetTableAdapters.productsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private waterDataSetTableAdapters.userTableAdapter userTableAdapter;
+        private System.Windows.Forms.DateTimePicker appdate;
+        private System.Windows.Forms.ComboBox rec;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox actions;
         private System.Windows.Forms.Button savebtn2;
         private System.Windows.Forms.Button savebtn1;
-        private System.Windows.Forms.BindingSource productsBindingSource1;
+        private waterDataSet waterDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private waterDataSetTableAdapters.productsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private waterDataSetTableAdapters.userTableAdapter userTableAdapter;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox nat;
     }
 }

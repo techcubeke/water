@@ -29,6 +29,10 @@ namespace Water.bill
         {
             // TODO: This line of code loads data into the 'waterDataSet.bill' table. You can move, or remove it, as needed.
             this.billTableAdapter.Fill(this.waterDataSet.bill);
+            // TODO: This line of code loads data into the 'waterDataSet.bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.waterDataSet.bill);
+            // TODO: This line of code loads data into the 'waterDataSet.bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.waterDataSet.bill);
 
         }
     }

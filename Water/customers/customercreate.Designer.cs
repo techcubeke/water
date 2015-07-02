@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.actions = new System.Windows.Forms.GroupBox();
             this.savebtn1 = new System.Windows.Forms.Button();
             this.savebtn2 = new System.Windows.Forms.Button();
             this.prod = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waterDataSet = new Water.waterDataSet();
             this.area = new System.Windows.Forms.RichTextBox();
             this.apppin = new System.Windows.Forms.TextBox();
             this.appplot = new System.Windows.Forms.TextBox();
@@ -44,14 +47,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.acc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.addr = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tel = new System.Windows.Forms.TextBox();
+            this.nat = new System.Windows.Forms.TextBox();
+            this.productsTableAdapter = new Water.waterDataSetTableAdapters.productsTableAdapter();
             this.actions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waterDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // actions
@@ -77,6 +83,7 @@
             this.savebtn1.TabIndex = 1;
             this.savebtn1.Text = "save and new";
             this.savebtn1.UseVisualStyleBackColor = true;
+            this.savebtn1.Click += new System.EventHandler(this.savebtn1_Click);
             // 
             // savebtn2
             // 
@@ -87,9 +94,11 @@
             this.savebtn2.TabIndex = 0;
             this.savebtn2.Text = "save and view";
             this.savebtn2.UseVisualStyleBackColor = true;
+            this.savebtn2.Click += new System.EventHandler(this.savebtn2_Click);
             // 
             // prod
             // 
+            this.prod.DataSource = this.productsBindingSource;
             this.prod.DisplayMember = "product";
             this.prod.FormattingEnabled = true;
             this.prod.Location = new System.Drawing.Point(209, 466);
@@ -98,6 +107,16 @@
             this.prod.Size = new System.Drawing.Size(282, 28);
             this.prod.TabIndex = 32;
             this.prod.ValueMember = "product";
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "products";
+            this.productsBindingSource.DataSource = this.waterDataSet;
+            // 
+            // waterDataSet
+            // 
+            this.waterDataSet.DataSetName = "waterDataSet";
+            this.waterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // area
             // 
@@ -220,13 +239,13 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Applicants Name";
             // 
-            // textBox1
+            // acc
             // 
-            this.textBox1.Location = new System.Drawing.Point(686, 40);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 25);
-            this.textBox1.TabIndex = 37;
+            this.acc.Location = new System.Drawing.Point(686, 40);
+            this.acc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.acc.Name = "acc";
+            this.acc.Size = new System.Drawing.Size(282, 25);
+            this.acc.TabIndex = 37;
             // 
             // label9
             // 
@@ -248,14 +267,14 @@
             this.label10.TabIndex = 38;
             this.label10.Text = "National ID";
             // 
-            // richTextBox1
+            // addr
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(209, 176);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(282, 91);
-            this.richTextBox1.TabIndex = 41;
-            this.richTextBox1.Text = "";
+            this.addr.Location = new System.Drawing.Point(209, 176);
+            this.addr.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.addr.Name = "addr";
+            this.addr.Size = new System.Drawing.Size(282, 91);
+            this.addr.TabIndex = 41;
+            this.addr.Text = "";
             // 
             // label6
             // 
@@ -269,21 +288,25 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "Address";
             // 
-            // textBox2
+            // tel
             // 
-            this.textBox2.Location = new System.Drawing.Point(209, 397);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 25);
-            this.textBox2.TabIndex = 42;
+            this.tel.Location = new System.Drawing.Point(209, 397);
+            this.tel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tel.Name = "tel";
+            this.tel.Size = new System.Drawing.Size(282, 25);
+            this.tel.TabIndex = 42;
             // 
-            // textBox3
+            // nat
             // 
-            this.textBox3.Location = new System.Drawing.Point(209, 105);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(282, 25);
-            this.textBox3.TabIndex = 43;
+            this.nat.Location = new System.Drawing.Point(209, 105);
+            this.nat.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.nat.Name = "nat";
+            this.nat.Size = new System.Drawing.Size(282, 25);
+            this.nat.TabIndex = 43;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // customercreate
             // 
@@ -291,12 +314,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1006, 612);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.nat);
+            this.Controls.Add(this.tel);
+            this.Controls.Add(this.addr);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.acc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.actions);
             this.Controls.Add(this.prod);
@@ -315,9 +338,12 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "customercreate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ADD NEW CUSTOMER";
             this.Load += new System.EventHandler(this.customers_Load);
             this.actions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waterDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,13 +367,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox acc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox addr;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tel;
+        private System.Windows.Forms.TextBox nat;
+        private waterDataSet waterDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private waterDataSetTableAdapters.productsTableAdapter productsTableAdapter;
 
     }
 }

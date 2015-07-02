@@ -14,3 +14,11 @@ C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.appcreat
 C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.bill.billdetails.resources
 C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.custdetails.resources
 C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.customercreate.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.fee.fees.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.fee.products.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.login.signin.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.users.user.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.users.userdetails.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.pos.saledetails.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.bill.consumption.resources
+C:\Users\simon\Google Drive\water\Water\Water\obj\Debug\Water.customers.newcon.resources

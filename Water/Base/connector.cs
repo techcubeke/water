@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
@@ -13,7 +12,6 @@ using MySql.Data.MySqlClient;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Data.SqlClient;
 
 namespace Water.Base
@@ -46,7 +44,7 @@ namespace Water.Base
             server = "localhost";
             database = "water";
             uid = "root";
-            password = "";
+            password ="";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";" + "Allow User Variables=True;" + "allow zero datetime=yes";
 
@@ -194,7 +192,7 @@ namespace Water.Base
         public bool logIn(string user, string password)
         {
             UserName = user;
-            string query = "select userName, password from user where username=(@Name) and password=(@Password)";
+            string query = "select userName, password from user where userName=(@Name) and password=(@Password)";
             List<string>[] list = new List<string>[2];
             list[0] = new List<string>();
             list[1] = new List<string>();
@@ -221,7 +219,7 @@ namespace Water.Base
                 {
                     while (dataReader.Read())
                     {
-                        list[0].Add(dataReader["username"] + "");
+                        list[0].Add(dataReader["userName"] + "");
                         list[1].Add(dataReader["password"] + "");
 
 
@@ -293,73 +291,6 @@ namespace Water.Base
             }
             return false;
         }
-
-        //Select statement
-        public List<string>[] Select(string query)
-        {
-            //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                //Create a data reader and Execute the command
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                //Read the data and store them in the list
-                while (dataReader.Read())
-                {
-                    list[0].Add(dataReader["name"] + "");
-
-                }
-
-                //close Data Reader
-                dataReader.Close();
-
-                //close Connection
-                this.CloseConnection();
-
-                //return list to be displayed
-                return list;
-            }
-            else
-            {
-                return list;
-            }
-        }
-       
-       
-        //Count statement
-        public int Count()
-        {
-            string query = "SELECT Count(*) FROM tableinfo";
-            int Count = -1;
-
-            //Open Connection
-            if (this.OpenConnection() == true)
-            {
-                //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                //ExecuteScalar will return one value
-                Count = int.Parse(cmd.ExecuteScalar() + "");
-
-                //close Connection
-                this.CloseConnection();
-
-                return Count;
-            }
-            else
-            {
-                return Count;
-            }
-        }
-        
         //Backup
         public void Backup()
         {

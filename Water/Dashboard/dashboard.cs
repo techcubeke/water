@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Water.pos;
 using Water.customers;
 using Water.bill;
+using Water.fee;
+using Water.users;
+
 
 namespace Water.Dashboard
 {
@@ -22,6 +25,8 @@ namespace Water.Dashboard
 
         private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            products prod = new products();
+            prod.ShowDialog();
 
         }
 
@@ -38,7 +43,7 @@ namespace Water.Dashboard
 
         private void newApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            appcreate appl = new appcreate();
+            customercreate appl = new customercreate();
             appl.ShowDialog();
         }
 
@@ -80,6 +85,37 @@ namespace Water.Dashboard
         private void actvicateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addFeeItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fees fe = new fees();
+            fe.ShowDialog();
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            user usr = new user();
+            usr.ShowDialog();
+        }
+
+        private void userDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userdetails usr = new userdetails();
+            usr.ShowDialog();
+        }
+
+        private void recordBillPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consumption cs = new consumption();
+            cs.ShowDialog();
+
+        }
+
+        private void newConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newcon nc = new newcon();
+            nc.ShowDialog();
         }
     }
 }
